@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable name="viewmodel" type="com.example.mymvvm1.AthViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="match_parent"
+                                                       tools:context=".MainActivity"
+    android:id="@+id/root_constraint">
+
+        <EditText android:text="@={viewmodel.user}"
+                  android:layout_width="match_parent" android:layout_height="wrap_content"
+                  tools:ignore="MissingConstraints"
+                  android:hint="enter username"
+                  android:padding="10dp" tools:layout_editor_absoluteX="0dp" android:layout_marginTop="28dp"
+                  app:layout_constraintTop_toBottomOf="@+id/editText" android:id="@+id/editText2"
+        android:layout_margin="10dp"/>
+
+        <EditText android:text="@={viewmodel.pass}"
+                  android:layout_width="match_parent" android:layout_height="wrap_content"
+                  tools:ignore="MissingConstraints"
+                  android:hint="enter password"
+                  android:padding="10dp" tools:layout_editor_absoluteY="225dp" tools:layout_editor_absoluteX="0dp"
+                  android:id="@+id/editText"
+        android:layout_margin="10dp"/>
+
+        <Button android:layout_width="match_parent" android:layout_height="wrap_content"
+                tools:ignore="MissingConstraints"
+                android:text="enter to user"
+                android:onClick="@{viewmodel::click}"
+                tools:layout_editor_absoluteX="0dp"
+                app:layout_constraintTop_toBottomOf="@+id/editText2" android:layout_marginTop="44dp"
+        android:layout_margin="10dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
