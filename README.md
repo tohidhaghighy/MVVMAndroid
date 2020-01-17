@@ -25,3 +25,16 @@ One of the important implementation strategies of this layer is to decouple it f
 
 
 ![MVVM Description](https://miro.medium.com/max/606/1*BpxMFh7DdX0_hqX6ABkDgw.png)
+
+
+# LiveData
+
+As said above, LiveData is one of the newly introduced architecture components. LiveData is an observable data holder. This allows the components in your app to be able to observe LiveData objects for changes without creating explicit and rigid dependency paths between them. This decouples completely the LiveData object producer from the LiveData object consumer.
+
+Adding to this, there is also a great benefit in LiveData, LiveData respects the lifecycle state of your app components (activities, fragments, services) and handles object life cycle management which ensures that LiveData objects do not leak.
+
+    As per Google Docs, If you are already using a library like Rx or Agera, you can continue using them instead of LiveData. But in this case, it is your responsibility to handle object allocation and de-allocation per Android components life cycle.
+
+Since LiveData respects Android Lifecycle, this means it will not invoke its observer callback unless the LiveData host (activity or fragment) is in an active state (received onStart() but did not receive onStop() for example). Adding to this, LiveData will also automatically remove the observer when the its host receives onDestroy().
+
+LiveData will be illustrated in our MVVM sample app below.
