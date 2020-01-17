@@ -22,3 +22,6 @@ One of the important implementation strategies of this layer is to decouple it f
 
  - View
  Finally, the view role in this pattern is to observe (or subscribe to) a ViewModel observable to get data in order to update UI elements accordingly.
+
+
+![MVVM Description](https://miro.medium.com/max/606/1*BpxMFh7DdX0_hqX6ABkDgw.png)
